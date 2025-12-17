@@ -1,39 +1,84 @@
-# WelthVyn - AI-Powered Personal Finance Platform
+# WelthVyn — AI-Powered Financial Intelligence Platform
 
-WelthVyn is a modern, full-stack financial management application built with Next.js 15. It leverages AI to simplify expense tracking and provides robust tools for budgeting, account management, and automated transaction processing.
+WelthVyn is a sophisticated, full-stack personal finance management platform built with **Next.js 15**. It combines modern UI/UX, AI-driven insights, and automated backend workflows to help users gain complete control over their financial health.
 
-## 🚀 Features
+---
 
--   **AI Receipt Scanning**: Automatically extract transaction details (amount, date, merchant, and category) from receipt images using Google Gemini AI.
--   **Comprehensive Dashboard**: Visualize your financial health with interactive charts and transaction overviews.
--   **Multi-Account Management**: Track balances across different account types like Savings and Current accounts.
--   **Smart Budgeting**: Set monthly budgets and receive alerts when you approach your spending limits.
--   **Recurring Transactions**: Automate your finances with support for daily, weekly, monthly, and yearly recurring transactions.
--   **Advanced Security**: Protected by ArcJet for rate limiting and bot protection, specifically for sensitive actions like transaction creation.
--   **Responsive Design**: Built with Tailwind CSS and Shadcn UI for a seamless experience across desktop and mobile.
+## 🚀 Key Features
+
+### 🧠 AI-Powered Insights
+- **Smart Receipt Scanning**  
+  Upload receipt images to automatically extract total amount, date, description, merchant name, and suggested category using **Google Gemini 1.5 Flash**.
+
+- **Automated Financial Advisory**  
+  Monthly AI-generated reports with actionable insights based on spending behavior and income-to-expense ratios.
+
+---
+
+### 📊 Comprehensive Financial Management
+- **Multi-Account Tracking**  
+  Manage multiple *Savings* and *Current* accounts with real-time balance updates.
+
+- **Advanced Transaction Logging**  
+  Detailed tracking of income and expenses with support for bulk deletion and custom categories.
+
+- **Interactive Dashboard**  
+  Dynamic charts, summaries, and budget progress indicators for real-time financial visibility.
+
+---
+
+### 🤖 Automation & Background Jobs
+- **Recurring Transactions**  
+  Supports Daily, Weekly, Monthly, and Yearly automated transactions with scheduled balance updates.
+
+- **Smart Budget Alerts**  
+  Spending is monitored every 6 hours. Automated email alerts are sent when users exceed 80% of their monthly budget.
+
+- **Monthly Financial Reports**  
+  Automatically generates and emails a detailed financial summary on the 1st of every month.
+
+---
+
+### 🛡️ Security & Performance
+- **ArcJet Protection**  
+  Implements advanced rate limiting and bot protection using token bucket algorithms.
+
+- **Server Actions**  
+  Secure and high-performance data mutations using Next.js Server Actions.
+
+- **Optimistic UI**  
+  Instant UI updates with background revalidation to ensure database consistency.
+
+---
 
 ## 🛠️ Tech Stack
+- **Framework:** Next.js 15 (App Router)
+- **Database:** PostgreSQL
+- **ORM:** Prisma
+- **Authentication:** Clerk
+- **AI Engine:** Google Generative AI (Gemini SDK)
+- **Workflow Orchestration:** Inngest
+- **Security:** ArcJet
+- **Email Service:** Resend
+- **Styling:** Tailwind CSS, Shadcn UI
 
--   **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
--   **Database**: [PostgreSQL](https://www.postgresql.org/) with [Prisma ORM](https://www.prisma.io/)
--   **Authentication**: [Clerk](https://clerk.com/)
--   **AI Engine**: [Google Gemini AI](https://ai.google.dev/)
--   **Styling**: [Tailwind CSS](https://tailwindcss.com/) & [Shadcn UI](https://ui.shadcn.com/)
--   **Security**: [ArcJet](https://arcjet.com/)
--   **Workflow Automation**: [Inngest](https://www.inngest.com/)
+---
 
-## 📋 Prerequisites
+## ⚙️ Environment Setup
 
-Before you begin, ensure you have accounts and API keys for:
-- Clerk (Authentication)
-- Supabase or Neon (PostgreSQL Database)
-- Google AI Studio (Gemini API)
-- ArcJet (Security)
-- Resend (Email Notifications)
+Create a `.env` file in the root directory and add the following variables:
 
-## ⚙️ Installation
+```env
+DATABASE_URL=
+DIRECT_URL=
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Piyush12Gm/welthvyn.git](https://github.com/Piyush12Gm/welthvyn.git)
-   cd welthvyn
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
+
+GEMINI_API_KEY=
+RESEND_API_KEY=
+ARCJET_KEY=
